@@ -74,7 +74,9 @@ export function formatDateObj(
     }
     case "S": {
       return millisecond
-        ? millisecond <= 99 ? `0${millisecond}` : millisecond.toString()
+        ? millisecond <= 9 ? `00${millisecond}` 
+        : millisecond <= 99 ? `0${millisecond}` 
+        : millisecond.toString() 
         : "000";
     }
     case "w": {
